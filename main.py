@@ -45,7 +45,7 @@ while True:
     print("3. Mark Task as Complete")
     print("4. Delete Task")
     print("5. Clear All Tasks")
-    print("4. Exit")
+    print("6. Exit")
 
     choice = input("Enter your choice (1-4): ")
 
