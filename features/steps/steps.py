@@ -8,6 +8,9 @@ APP_PATH = f'"{sys.executable}" main.py'
 def step_impl(context):
     context.child = PopenSpawn(APP_PATH, encoding='utf-8', timeout=5)
 
+
+# Scenario 1
+
 @when('the user selects option "{option}"')
 def step_impl(context, option):
     context.child.expect("Enter your choice.*")
