@@ -81,6 +81,17 @@ def step_impl(context, task):
 
 # Scenario 5
 
+@when('enters new description "{new_description}"')
+def step_impl(context, new_description):
+    context.child.sendline(new_description)
+
+@then('the task description should change')
+def step_impl(context):
+    context.child.expect("Task updated.")
+
+
+# Scenario 6
+
 @given('multiple tasks exist')
 def step_impl(context):
     context.child = PopenSpawn(APP_PATH, encoding='utf-8', timeout=5)

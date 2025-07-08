@@ -29,6 +29,17 @@ def delete_task():
     else:
         print("Invalid task number.")
 
+def edit_task():
+    list_tasks()
+    task_num = int(input("Enter task number to edit: ")) - 1
+    if 0 <= task_num < len(tasks):
+        new_task = input("Enter the new task description: ")
+        old_task = tasks[task_num]["task"]
+        tasks[task_num]["task"] = new_task
+        print("Task updated.")
+    else:
+        print("Invalid task number.")
+
 def clear_all_tasks():
     confirm = input("Are you sure you want to delete all tasks? (y/n): ")
     if confirm.lower() == "y":
@@ -44,8 +55,9 @@ while True:
     print("2. List Tasks")
     print("3. Mark Task as Complete")
     print("4. Delete Task")
-    print("5. Clear All Tasks")
-    print("6. Exit")
+    print("5. Edit task")
+    print("6. Clear All Tasks")
+    print("7. Exit")
 
     choice = input("Enter your choice (1-6): ")
 
@@ -62,9 +74,12 @@ while True:
         delete_task()
 
     elif choice == "5":
-        clear_all_tasks()
+        edit_task()
 
     elif choice == "6":
+        clear_all_tasks()
+
+    elif choice == "7":
         print("Goodbye!")
         break
 

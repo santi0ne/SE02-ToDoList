@@ -24,8 +24,15 @@ Feature: To-Do List Management
     And enters "2"
     Then only task "Math homework" should remain
 
+  Scenario: Edit a task
+    Given a task "Math homework" exists
+    When the user selects option "5"
+    And enters "1"
+    And enters new description "Math lesson"
+    Then the task description should change
+
   Scenario: Clear all tasks
     Given multiple tasks exist
-    When the user selects option "5"
+    When the user selects option "6"
     And confirms with "y"
     Then all tasks should be cleared
