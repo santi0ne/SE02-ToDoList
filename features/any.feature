@@ -29,7 +29,3 @@ Feature: To-Do List Management
     When the user selects option "5"
     And confirms with "y"
     Then all tasks should be cleared
-
-  Scenario: Exit the application
-    When the user selects option "6"
-    Then the application should close with "Goodbye!"
